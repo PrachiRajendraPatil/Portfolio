@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-256-thumb/portfolio-2432090-2058964.png?f=webp&w=256">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Prachi's Portfolio</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bolder;
+            font-variant:unset;
+            font-family: arial rgb(5, 5, 5);
+            -webkit-text-stroke: 0.4px;
+            text-shadow: 0px 0px 10px white;
+        }
+        #about{
+            height:500px;
+            width:100%;
+            top:500;
+        }
+        #navigation_bar{
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 10;
+            background-image: linear-gradient(to right,#f5bc93,#fadbc5);
+        }
+       .Portfolio_section{
+            width: 100%;
+            margin-bottom: 50px;
+       } 
+        .nav-link{
+            color: black !important;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #port-name, .fed{
+            font-size: 35px;
+            color: #f24171;
+            font-weight: bolder;
+            font-family: Arial Black;
+            font-variant: small-caps;
+            -webkit-text-stroke: 1px black;
+            text-shadow:  0px 0px 10px white;
+            transition-duration: 2s;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .home-section{
+            height:400px;
+            position: relative;
+            top: 70px;
+            background-image: url("https://www.remoterocketship.com/_next/image?url=%2Fimages%2Fblog%2Fguide%2Fsoftware-engineer-guide.jpeg&w=640&q=75");
+            background-repeat: no-repeat;
+            background-position: 90% 30%;
+            background-size: 30%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .my-info{
+            height: 350px;
+            width: 700px;
+            margin-top: 90px;
+            margin-left: 50px;
+        }
+        .info-data1{
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        .fed{
+            font-size: 35px;
+            font-weight: bolder;
+            color:#f5aec1;
+        }
+        #resume-button{
+            margin:30px;
+            height:50px;
+            width:120px;
+            border: none;
+            outline: none;
+            background-color:#d1416a;
+            border-radius: 8px;
+            transition-duration: 2s;
+        }
+        #resume-button a{
+            color:white;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+        #resume-button a:hover{
+            color:#f24171;
+        }
+        #resume-button:hover{
+            background-color: white;
+            color: #f24171;
+            border: 2px solid #f24171;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 5px #f24171;
+        }
+        #about {
+            background-color: #f4f4f9;
+        }
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 50px;
+            align-items: center;
+        }
+         .about-img {
+            flex: 1;
+            text-align: center;
+        }
+        .about-img img {
+            max-width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 1.5s ;
+        } 
+
+
+        .about-content {
+            flex: 2;
+            padding: 20px;
+        }
+        .about-content h1 {
+            font-size: 45px;
+            color: black;
+            margin-bottom: 20px;
+            font-weight: bolder;
+        }
+        .about-content p {
+            font-size: 18px;
+            color: rgb(40, 40, 40);
+        }
+        /* .slide-fwd-center {
+	        -webkit-animation: slide-fwd-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-fwd-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        /* ----------------------------------------------
+ * Generated by Animista on 2024-7-22 11:50:48
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-fwd-center
+ * ----------------------------------------
+ */
+/* @-webkit-keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+  }
+}
+@keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+  }
+} */ */
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2024-7-22 12:5:19
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+        #skills {
+            background-color: #e8e8e8;
+            margin-bottom: 20px;
+        }
+        #skills h1{
+            font-size: 45px;
+            color: black;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            padding-top: 20px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            transition: transform 0.3s ease;
+        }
+        .skill-card {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+            
+        }
+        .skill-card:hover {
+            transform: scale(1.2);
+            background-color: whitesmoke;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px grey;
+            transition-delay: 0.1s;
+             
+        }
+        .skill-card h5 {
+            margin-bottom: 15px;
+            color: #3d72d1;
+        }
+
+        /* #contact h2{
+            text-align: center;
+            margin-top: 3em;
+            margin-bottom: 1em;
+            font-size: 36px;
+        }
+        #contact form{
+            text-align: center;
+            max-width: 50em;
+            margin: 1rem auto;
+            margin-bottom: 3em;
+        }
+        #contact form .input-box{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+        }
+        #contact form .input-box input,
+        #contact form textarea{
+            width:100%;
+            padding: 1.5em;
+            font-size: 18px;
+            color: black;
+            background: rgb(241,241,241);
+            border-radius: .8rem;
+            margin: 1rem 0;
+            resize: none;
+        } */
+         #contact{
+            position:relative;
+            min-height: 100vh;
+            padding: 50px 100px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url();
+         }
+         #contact .content{
+            max-width: 800px;
+            text-align: center;
+
+         }
+         #contact .content h2{
+            font-size: 36px;
+            font-weight: 500;
+            color: #fff;
+         }
+
+         .container{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+         }
+         .container .contactinfo{
+            width:50%;
+            display: flex;
+            flex-direction: column;
+         }
+         .container .contactinfo .box{
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+         }
+         .container .contactinfo .box .icon{
+            min-width: 60px;
+            height: 60px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+         }
+         .container .contactinfo .box .text{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            color:#fff;
+            flex-direction: column;
+            font-weight: 300;
+         }
+         .container .contactinfo .box .text h3{
+            font-weight: 300;
+            color: #00bcd4;
+         }
+         .contactForm{
+            width: 40%;
+            padding: 40px;
+            background: #fff;
+            justify-content: flex;
+         }
+         .contactForm h2{
+            font-size: 30px;
+            color:#333;
+            font-weight: 500;
+         }
+         .contactForm .inputBox{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+         }
+
+         .contactForm .inputBox input,
+         .contactForm .inputBox textarea{
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin:10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline:none;
+          
+         }
+        #footer-port{
+            height: 30px;
+            width: 100%;
+            background-color: #e8e8e8;
+     
+        }
+         #footer-port h4{
+            line-height: 40px;
+            font-weight: bolder;
+            font-variant:small-caps;
+            /* color: white; */
+        }
+
+        
+        
+
+    </style>
+</head>
+<body>
+    <section id="navigation_bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">Prachi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                
+               
+            </div>
+          </nav>
+    </section>
+
+
+    <section id="home" class="Portfolio_section">
+        <div class="home-section">
+            <div class="my-info">
+                <div class="info-data1">Hi my name is</div>
+                <div id="port-name" data-aos="slide-right" >PRACHI PATIL</div>
+                <div class="info-data1">I am a <span class="fed">Front End Developer</span></div>
+
+                <DIV>
+                    <button id="resume-button"><a href="PrachiPatil.pdf">RESUME</a></button>
+                </DIV>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="portfolio-section">
+        <div class="about-container">
+            <div class="about-img">
+                <img  height="350px" src="Prachi Photo.jpeg" alt="Profile Picture">
+            </div>
+            <div class="about-content">
+                <h1 align="center" class="tracking-in-expand">About</h1>
+                <p>
+                    I am a passionate and dedicated Front End Developer, eager to bring innovative and dynamic user interfaces to life. With a fresh perspective and a strong foundation in HTML, CSS, and JavaScript, I am committed to crafting engaging and responsive web experiences. I am enthusiastic about learning new technologies and continuously improving my skills to stay at the forefront of web development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="Portfolio_section">
+        <h1 align="center" class="tracking-in-expand">Skills</h1>
+        <div class="skills-container" align="center">
+            <div class="skill-card">
+                <h5>Languages</h5>
+                <p>C, C++, Java, Python</p>
+            </div>
+            <div class="skill-card">
+                <h5>Front End Technologies</h5>
+                <p>HTML, CSS, JavaScript, Bootstrap, React.js</p>
+            </div>
+            <div class="skill-card">
+                <h5>Tools</h5>
+                <p>Git,  VSCode</p>
+            </div>
+            <div class="skill-card">
+                <h5>Operating Systems</h5>
+                <p>Windows, Linux</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="Portfolio_section">
+        <h1 align="center" class="tracking-in-expand" style="padding-top: 20px; padding-bottom: 20px;">Projects </h1>
+        <div class="myprojects-section">
+
+            <div class="card-deck">
+                <div class="card" data-aos="slide-right">
+                  <img style="margin:1%;width: 450px;"src="image.png"   height="260px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Portfolio</h5>
+                    <p class="card-text">A personal website showcasing your skills, projects designed to highlight your abilities and make a strong impression on potential employers and clients.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/Shrikantkokate/portfolio_shrikant" target="blank">CLICK HERE </a></small></p>
+                  </div>
+                </div>
+                <div class="card" data-aos="slide-down">
+                  <img src="https://img.freepik.com/premium-vector/vector-calculator-icon_901263-202.jpg"  width="100px" height="265px"  class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Calculator</h5>
+                    <p class="card-text">An intuitive and versatile calculator that supports basic arithmetic operations for making everyday calculations easy and efficient.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/PrachiRajendraPatil/calculator" target="blank">CLICK HERE </a></small></small></p>
+                  </div>
+                </div>
+                <div class="card" data-aos="slide-left">
+                  <img style="height: 260px; width: 240px;margin-top: 1%; margin-left: 27%;" src="https://cdn-icons-png.freepik.com/512/3767/3767036.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Weather App</h5>
+                    <p class="card-text">A user-friendly application that provides real-time weather updates and forecasts, helping users stay informed about current and future weather conditions.</p>
+                    <p class="card-text"><small class="text-muted"><a href="https://github.com/Shrikantkokate/portfolio_shrikant" target="blank">CLICK HERE </a></small></small></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    </section>
+
+    <!-- <section id="contact" class="Portfolio_section">
+        <h1 align="center" class="tracking-in-expand"style="padding-bottom:20px" >Contact </h1>
+        <div align="center">
+         <table class="contact-tbl"  width="90%">
+             <tr height="300px" align="center" valign ="top">
+                 <td width="50%">
+                    <div style="background-color:whitesmoke ;", class="contact_information">
+                        <div class="contact-info">
+                            <h3 style="margin-bottom: 20px;">Contact Information</h3>
+                            <i class="fas fa-map-marker-alt icon"></i>
+                            <p><strong>Address:</strong> Karve nagar,pune,Maharashtra</p>
+                            <i class="fas fa-envelope icon"></i>
+                            <p><strong>Email:</strong> <a href="mailto:info@example.com" style="color: #fff;">prachi2002pp@gmail.com</a></p>
+                            <i class="fas fa-globe icon"></i>
+                            <p><strong>Website:</strong> <a href="http://www.example.com" target="_blank" style="color: #fff;">www.example.com</a></p>
+                            <p>Feel free to contact me for any inquiries or assistance.</p>
+                        </div>
+                    </div>
+                     
+                 </td>
+                 <td>
+                     <div style="padding: 15px; height: 330px; width: 100%; background-color: whitesmoke;">
+                         <h4>Enquiry</h4>
+                         <form>
+                             <div class="form-row">
+                               <div class="form-group col-md-6">
+                                 <label for="inputEmail4">Email</label>
+                                 <input type="email" class="form-control" id="inputEmail4">
+                               </div>
+                               <div class="form-group col-md-6">
+                                 <label for="inputPassword4">Phone Number</label>
+                                 <input type="tel" class="form-control" id="inputPassword4">
+                               </div>
+                             </div>
+                             
+                             <div class="form-group">
+                               <label for="inputAddress2">Comment</label>
+                               <input type="text" class="form-control" id="inputAddress2" placeholder="Add a comment here">
+                             </div>
+                            
+                             <div class="form-group">
+                               
+                             </div>
+                             <button type="submit" class="btn btn-primary">Send</button>
+                           </form>
+                     </div>
+                 </td>
+             </tr>
+         </table>
+        </div>
+     </section>  -->
+     <section id="contact" class="Portfolio_section">
+        <div class="content">
+            <h2>Contact Me</h2>
+        </div>
+        <div class="container">
+            <div class="contactinfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Cummins College Road,<br> Karve Nagar,Pune,<br>411052</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>7558563001</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>prachi2002pp@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contactForm">
+                    <form>
+                        <h2>Send message</h2>
+                        <div class="inputBox">
+                            <input type="text" name="" required>
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="" required>
+                            <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <textarea required="required"></textarea>
+                            <span>Type your Message....</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" name="" value="Send">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+     </section>
+
+     <section id="footer-port">
+        <h6 align ="center"> Made by Prachi &#x1F497 </h6>
+    </section> 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+       {
+        duration: 3000,
+       }
+      );
+    </script>
+
+</body>
+</html>
